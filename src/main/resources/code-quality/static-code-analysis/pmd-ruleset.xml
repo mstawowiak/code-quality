@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<ruleset name="Custom ruleset"
+    xmlns="http://pmd.sf.net/ruleset/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+
+    <description>
+        This ruleset checks code for bad stuff
+    </description>
+
+    <rule ref="rulesets/java/basic.xml"/>
+    <rule ref="rulesets/java/clone.xml"/>
+    <rule ref="rulesets/java/empty.xml"/>
+    <rule ref="rulesets/java/imports.xml"/>
+    <rule ref="rulesets/java/strings.xml" />
+    <rule ref="rulesets/java/unnecessary.xml"/>
+    <rule ref="rulesets/java/unusedcode.xml"/>
+    <rule ref="rulesets/java/sunsecure.xml"/>
+
+    <!-- Everything from 'design.xml' except specified below -->
+    <rule ref="rulesets/java/design.xml">
+        <exclude name="AbstractClassWithoutAbstractMethod"/>    <!-- Sometimes this is useful -->
+        <exclude name="AvoidSynchronizedAtMethodLevel"/>        <!-- Sometimes this is useful -->
+        <exclude name="ConfusingTernary"/>                      <!-- Controversial... -->
+        <exclude name="PreserveStackTrace"/>                    <!-- Sometimes this is useful -->
+        <exclude name="TooFewBranchesForASwitchStatement"/>     <!-- Switch is more readable -->
+        <exclude name="UncommentedEmptyConstructor"/>           <!-- Minor rule -->
+        <exclude name="UncommentedEmptyMethodBody"/>            <!-- Minor rule -->
+        <exclude name="UseLocaleWithCaseConversions" />         <!-- Sometimes this is useful -->
+    </rule>
+
+    <!-- Everything from 'optimizations.xml' except specified below -->
+    <rule ref="rulesets/java/optimizations.xml">
+        <exclude name="AvoidInstantiatingObjectsInLoops"/>  <!-- It makes no sense in some scenarios -->
+        <exclude name="LocalVariableCouldBeFinal"/>         <!-- To think about it -->
+        <exclude name="MethodArgumentCouldBeFinal"/>        <!-- To think about it -->
+    </rule>
+
+    <!-- Everything from 'strictexception.xml' except specified below -->
+    <rule ref="rulesets/java/strictexception.xml">
+        <exclude name="AvoidThrowingRawExceptionTypes"/>    <!-- Sometimes this is useful -->
+        <exclude name="AvoidCatchingGenericException"/>     <!-- Sometimes this is useful -->
+        <exclude name="SignatureDeclareThrowsException"/>   <!-- Sometimes this is useful -->
+    </rule>
+
+    <!-- Everything from 'typeresolution' except specified below -->
+    <rule ref="rulesets/java/typeresolution.xml">
+        <exclude name="SignatureDeclareThrowsException"/>   <!-- Sometimes this is useful -->
+    </rule>
+
+    <!-- Everything from 'controversial' except specified below -->
+    <rule ref="rulesets/java/controversial.xml">
+        <exclude name="OnlyOneReturn"/>             <!-- Sometimes this is useful -->
+        <exclude name="DefaultPackage"/>            <!-- Sometimes this is useful -->
+        <exclude name="AtLeastOneConstructor"/>     <!-- Redundant code -->
+        <exclude name="CallSuperInConstructor"/>    <!-- Redundant code -->
+        <exclude name="UseConcurrentHashMap" />     <!-- Not always needed -->
+        <exclude name="DataflowAnomalyAnalysis"/>   <!-- Controversial... -->
+        <exclude name="AvoidUsingShortType" />      <!-- Controversial... -->
+    </rule>
+
+    <rule ref="rulesets/java/junit.xml">
+        <exclude name="JUnitTestContainsTooManyAsserts"/>   <!-- Sometimes this is useful -->
+    </rule>
+
+</ruleset>
