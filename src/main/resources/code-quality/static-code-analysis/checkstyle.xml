@@ -15,18 +15,6 @@
     <module name="FileTabCharacter">
         <property name="eachLine" value="true"/>
     </module>
-    
-    <module name="SuppressWithNearbyCommentFilter">
-        <property name="commentFormat" value="NOCHECKSTYLE"/>
-        <property name="checkFormat" value=".*"/>
-        <property name="influenceFormat" value="0"/>
-    </module>
-    
-    <module name="SuppressionCommentFilter">
-        <property name="offCommentFormat" value="CSOFF\: ([\w\|]+)"/>
-        <property name="onCommentFormat" value="CSON\: ([\w\|]+)"/>
-        <property name="checkFormat" value="$1"/>
-    </module>
 
     <!-- Filter out Checkstyle warnings that have been suppressed with the @SuppressWarnings annotation -->
     <module name="SuppressWarningsFilter" />
@@ -35,7 +23,18 @@
         <!-- Make the @SuppressWarnings annotations available to Checkstyle -->
         <module name="SuppressWarningsHolder" />
 
-        <module name="FileContentsHolder"/>
+        <module name="SuppressWithNearbyCommentFilter">
+            <property name="commentFormat" value="NOCHECKSTYLE"/>
+            <property name="checkFormat" value=".*"/>
+            <property name="influenceFormat" value="0"/>
+        </module>
+
+        <module name="SuppressionCommentFilter">
+            <property name="offCommentFormat" value="CSOFF\: ([\w\|]+)"/>
+            <property name="onCommentFormat" value="CSON\: ([\w\|]+)"/>
+            <property name="checkFormat" value="$1"/>
+        </module>
+
         <module name="IllegalType"/>
         <module name="HideUtilityClassConstructor"/>
         <module name="OuterTypeFilename"/>
@@ -65,9 +64,7 @@
             <property name="tokens" value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH"/>
         </module>
         <module name="NeedBraces"/>
-        <module name="LeftCurly">
-            <property name="maxLineLength" value="${checkstyle.line.length.max}" default="120"/>
-        </module>
+        <module name="LeftCurly"/>
         <module name="RightCurly">
             <property name="id" value="RightCurlySame"/>
             <property name="tokens" value="LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_DO"/>
@@ -181,6 +178,7 @@
 
         <module name="ImportOrder">
             <property name="option" value="bottom"/>
+            <property name="separated" value="true"/>
             <property name="sortStaticImportsAlphabetically" value="true"/>
         </module>
         <module name="RedundantImport"/>
