@@ -81,7 +81,7 @@ pmd {
 
 | Tool                    | Version   | Link  |
 | -------------           | --------- | ----- |
-| Checkstyle              | 8.4       | http://checkstyle.sourceforge.net/ |
+| Checkstyle              | 8.8       | http://checkstyle.sourceforge.net/ |
 | Maven Checkstyle Plugin | 2.17      | https://maven.apache.org/plugins/maven-checkstyle-plugin/ |
 
 ### Usage
@@ -95,14 +95,14 @@ configurations {
 }
 
 dependencies {
-    codeQualityConfig 'com.github.mstawowiak:code-quality:1.0.0'
+    codeQualityConfig 'com.github.mstawowiak:code-quality:1.1.0'
 }
 
 checkstyle {
     config = resources.text.fromArchiveEntry(configurations.codeQualityConfig,
             "code-quality/static-code-analysis/checkstyle.xml")
     sourceSets = [sourceSets.main]
-    toolVersion = '8.4'
+    toolVersion = '8.8'
 }
 ```
 
@@ -111,8 +111,8 @@ checkstyle {
 <properties>
     <java.target.version>1.8</java.target.version>
     <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
-    <checkstyle.version>8.4</checkstyle.version>
-    <code-quality.version>1.0.0</code-quality.version>
+    <checkstyle.version>8.8</checkstyle.version>
+    <code-quality.version>1.1.0</code-quality.version>
 </properties>
 
 <plugin>
