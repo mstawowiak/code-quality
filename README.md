@@ -8,8 +8,8 @@ Common configurations files for code quality plugins:
 
 | Tool              | Version           | Link  |
 | -------------     | -------------     | ----- |
-| PMD               | 5.6.1 / 5.8.1     | https://pmd.github.io/ |
-| Maven PMD Plugin  | 3.8               | https://maven.apache.org/components/plugins/maven-pmd-plugin/ |
+| PMD               | 6.0.1 / 6.1.0     | https://pmd.github.io/ |
+| Maven PMD Plugin  | 3.9               | https://maven.apache.org/components/plugins/maven-pmd-plugin/ |
 
 ### Usage
 
@@ -22,15 +22,16 @@ configurations {
 }
 
 dependencies {
-    codeQualityConfig 'com.github.mstawowiak:code-quality:1.0.0'
+    codeQualityConfig 'com.github.mstawowiak:code-quality:1.1.0'
 }
 
 pmd {
+    ruleSets = []
     ruleSetConfig = resources.text.fromArchiveEntry(configurations.codeQualityConfig,
             "code-quality/static-code-analysis/pmd-ruleset.xml")
     consoleOutput = true
     sourceSets = [sourceSets.main]
-    toolVersion = '5.8.1'
+    toolVersion = '6.1.0'
 }
 ```
 
@@ -38,8 +39,8 @@ pmd {
 ```
 <properties>
     <java.target.version>1.8</java.target.version>
-    <pmd.plugin.version>3.8</pmd.plugin.version>
-    <code-quality.version>1.0.0</code-quality.version>
+    <pmd.plugin.version>3.9</pmd.plugin.version>
+    <code-quality.version>1.1.0</code-quality.version>
 </properties>
 
 <plugin>
