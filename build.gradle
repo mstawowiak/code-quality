@@ -2,5 +2,5 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'com.github.mstawowiak'
-version = '1.1.0'
+version = '1.1.1-SNAPSHOT'
 description = 'Common configurations files for code quality plugins'
