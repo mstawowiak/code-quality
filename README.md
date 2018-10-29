@@ -82,7 +82,7 @@ pmd {
 | Tool                    | Version   | Link  |
 | -------------           | --------- | ----- |
 | Checkstyle              | 8.14      | http://checkstyle.sourceforge.net/ |
-| Maven Checkstyle Plugin | 2.17      | https://maven.apache.org/plugins/maven-checkstyle-plugin/ |
+| Maven Checkstyle Plugin | 3.0.0     | https://maven.apache.org/plugins/maven-checkstyle-plugin/ |
 
 ### Usage
 
@@ -110,7 +110,7 @@ checkstyle {
 ```
 <properties>
     <java.target.version>1.8</java.target.version>
-    <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
+    <checkstyle.plugin.version>3.0.0</checkstyle.plugin.version>
     <checkstyle.version>8.14</checkstyle.version>
     <code-quality.version>1.1.0</code-quality.version>
 </properties>
@@ -136,7 +136,7 @@ checkstyle {
             <id>checkstyle-validate</id>
             <configuration>
                 <excludes>**/target/**/*</excludes>
-                <sourceDirectory>${project.basedir}</sourceDirectory>
+                <sourceDirectories>${project.basedir}</sourceDirectories>
                 <configLocation>code-quality/static-code-analysis/checkstyle.xml</configLocation>
                 <consoleOutput>true</consoleOutput>
                 <failsOnError>true</failsOnError>
