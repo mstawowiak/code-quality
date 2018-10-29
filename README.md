@@ -1,5 +1,5 @@
 # code-quality
-Common configurations files for code quality plugins: 
+Common configurations files for code quality plugins:
 
 * PMD
 * Checkstyle
@@ -8,7 +8,7 @@ Common configurations files for code quality plugins:
 
 | Tool              | Version           | Link  |
 | -------------     | -------------     | ----- |
-| PMD               | 6.4.0 / 6.6.0     | https://pmd.github.io/ |
+| PMD               | 6.4.0 / 6.9.0     | https://pmd.github.io/ |
 | Maven PMD Plugin  | 3.10.0            | https://maven.apache.org/components/plugins/maven-pmd-plugin/ |
 
 ### Usage
@@ -31,7 +31,7 @@ pmd {
             "code-quality/static-code-analysis/pmd-ruleset.xml")
     consoleOutput = true
     sourceSets = [sourceSets.main]
-    toolVersion = '6.6.0'
+    toolVersion = '6.9.0'
 }
 ```
 
